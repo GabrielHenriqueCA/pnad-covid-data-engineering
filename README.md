@@ -431,7 +431,7 @@ ORDER BY mes_da_pesquisa, sexo;
 🚀 Experience with ELT pipelines, Medallion Architecture, and performance optimization
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielhenri/)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gabrielhenrique-eng)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/GabrielHenriqueCA)
 [![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gabrielhcacontato@gmail.com)
 
 > 💡 **Open to opportunities** in Data Engineering, Analytics Engineering and Cloud Data Platforms
