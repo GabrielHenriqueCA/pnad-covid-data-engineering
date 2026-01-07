@@ -499,42 +499,6 @@ ORDER BY taxa_acesso_exame DESC;
 -- P12:
 
 SELECT 
-    na_semana_passada_o_a_sr_a_estava_em_trabalho_remoto_home_office_ou_teletrabalho AS fez_home_office,
-
-    -- 1. Volume (Quantos trabalhadores em cada grupo?)
-    COUNT(*) AS total_trabalhadores,
-
-    -- 2. Quem testou?
-    SUM(CASE 
-        WHEN qual_o_resultado IN ('Positivo', 'Negativo') 
-          OR qual_o_resultado_2 IN ('Positivo', 'Negativo') 
-          OR qual_o_resultado_3 IN ('Positivo', 'Negativo') 
-        THEN 1 ELSE 0 END) AS total_testados,
-
-    -- 3. Taxa de Positividade (O Risco Real)
-    ROUND(100.0 * SUM(CASE 
-        WHEN qual_o_resultado = 'Positivo' 
-          OR qual_o_resultado_2 = 'Positivo' 
-          OR qual_o_resultado_3 = 'Positivo' 
-        THEN 1 ELSE 0 END) 
-        / 
-        NULLIF(SUM(CASE 
-            WHEN qual_o_resultado IN ('Positivo', 'Negativo') 
-              OR qual_o_resultado_2 IN ('Positivo', 'Negativo') 
-              OR qual_o_resultado_3 IN ('Positivo', 'Negativo') 
-            THEN 1 ELSE 0 END), 0)
-    , 2) AS taxa_positividade_percentual
-
-FROM tb_pnad_covid_gold
--- Filtramos apenas Sim/Não para pegar a força de trabalho ativa
-WHERE na_semana_passada_o_a_sr_a_estava_em_trabalho_remoto_home_office_ou_teletrabalho IN ('Sim', 'Não')
-GROUP BY 1
-ORDER BY taxa_positividade_percentual DESC;
-
----------------------------------------------
--- P13:
-
-SELECT 
     unidade_da_federacao AS uf,
 
     -- 1. Contexto (População na Amostra)
@@ -582,7 +546,7 @@ GROUP BY 1
 ORDER BY taxa_positividade_percentual DESC;
 
 ---------------------------------------------
--- P14:
+-- P13:
 
 SELECT 
     na_semana_passada_o_a_sr_a_estava_em_trabalho_remoto_home_office_ou_teletrabalho AS fez_home_office,
@@ -633,7 +597,7 @@ GROUP BY 1
 ORDER BY taxa_positividade_percentual DESC;
 
 ---------------------------------------------
--- P15:
+-- P14:
 
 SELECT 
     auxilios_emergenciais_relacionados_ao_coronavirus AS recebeu_auxilio,
