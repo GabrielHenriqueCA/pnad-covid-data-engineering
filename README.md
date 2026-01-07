@@ -153,21 +153,21 @@ FROM tb_pnad_covid_silver
 
 | # | Business Question | Athena Query | Expected Insight |
 |---|---------------------|--------------|------------------|
-| **Q1** | Difference in positivity rate between men and women? | `SELECT sexo, taxa_percentual...` | Identify most vulnerable gender |
-| **Q2** | Age group with highest positive rate? | `SELECT faixa_etaria, taxa_percentual...` | Prioritize protection by age |
-| **Q3** | Racial inequality in testing and positivity? | `SELECT cor_ou_raca, taxa_acesso, taxa_positividade...` | Evidence structural inequality |
-| **Q4** | Does education influence chance of testing positive? | `SELECT escolaridade, taxa_positividade...` | Correlate education with risk |
-| **Q5** | Which symptoms are most frequent in positives? | `SELECT sintoma, COUNT()...` | Symptom ranking |
-| **Q6** | Is loss of smell/taste the best predictor? | `SELECT sintoma, chance_de_ser_covid...` | Identify key symptom |
-| **Q7** | Proportion of asymptomatic among infected? | `SELECT quadro_clinico, porcentagem...` | Plan preventive testing |
-| **Q8** | Do remote workers have lower infection rate? | `SELECT fez_home_office, taxa_positividade...` | Evaluate distancing effectiveness |
-| **Q9** | Difference between capitals and interior? | `SELECT capital, taxa_positividade...` | Compare regional profiles |
-| **Q10** | Which test type had highest positive rate? | `SELECT tipo_teste, taxa_positividade...` | Evaluate test sensitivity |
-| **Q11** | Does health plan influence testing? | `SELECT possui_plano, taxa_acesso_exame...` | Measure access inequality |
-| **Q12** | Did those seeking care have higher rate? | `SELECT buscou_atendimento, taxa_positividade...` | Evaluate care effectiveness |
-| **Q13** | Regional difference (state) in infection rate? | `SELECT uf, taxa_positividade...` | Heat map by state |
-| **Q14** | Did remote workers show lower rate? | (Duplicate of Q8) | - |
-| **Q15** | Is emergency aid associated with higher infection? | `SELECT recebeu_auxilio, taxa_positividade...` | Correlate social vulnerability |
+| **Q1** | Difference in Covid-19 positivity rate between men and women over time? | `SELECT sexo, taxa_percentual...` | Identify gender-based vulnerability |
+| **Q2** | Which age groups show the highest Covid-19 positivity rates? | `SELECT faixa_etaria, taxa_percentual...` | Prioritize protection by age group |
+| **Q3** | Are there racial inequalities in access to testing and Covid-19 positivity? | `SELECT cor_ou_raca, taxa_acesso_exame, taxa_positividade...` | Evidence structural inequality |
+| **Q4** | Does education level influence access to testing and infection risk? | `SELECT escolaridade, taxa_acesso_exame, taxa_positividade...` | Correlate education with vulnerability |
+| **Q5** | Which symptoms are most frequent among confirmed Covid-19 cases? | `SELECT sintoma, COUNT(*)...` | Rank most common symptoms |
+| **Q6** | Which symptom is the strongest predictor of a positive Covid-19 test? | `SELECT sintoma, chance_de_ser_covid...` | Identify key predictive symptom |
+| **Q7** | What proportion of confirmed Covid-19 cases were asymptomatic? | `SELECT quadro_clinico, porcentagem...` | Support preventive testing strategies |
+| **Q8** | Did remote work reduce the risk of Covid-19 infection among workers? | `SELECT fez_home_office, taxa_positividade...` | Evaluate social distancing effectiveness |
+| **Q9** | Is there a difference in Covid-19 positivity and testing access between capitals and interior regions? | `SELECT capital, taxa_acesso, taxa_positividade...` | Compare urban and interior profiles |
+| **Q10** | Which type of Covid-19 test showed the highest positivity rate? | `SELECT tipo_teste, taxa_positividade...` | Evaluate test sensitivity |
+| **Q11** | Does having a private health plan influence access to Covid-19 testing and positivity rates? | `SELECT possui_plano, taxa_acesso_exame, taxa_positividade...` | Measure healthcare access inequality |
+| **Q12** | Are there regional differences (by state) in Covid-19 testing access and infection rates? | `SELECT uf, taxa_acesso, taxa_positividade...` | Build infection heat map by state |
+| **Q13** | Does remote work influence access to testing and infection risk among workers? | `SELECT fez_home_office, taxa_acesso_exame, taxa_positividade...` | Assess structural privilege in testing |
+| **Q14** | Is receiving emergency aid associated with higher Covid-19 infection rates? | `SELECT recebeu_auxilio, taxa_positividade...` | Correlate social vulnerability |
+
 
 ---
 
