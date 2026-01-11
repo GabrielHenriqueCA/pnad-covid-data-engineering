@@ -145,7 +145,7 @@ FROM tb_pnad_covid_silver
 
 ---
 
-## 📊 Data Analysis (15 Key Questions)
+## 📊 Data Analysis (14 Key Questions)
 
 **File**: `athena/business_queries.sql` → Real Athena queries
 
